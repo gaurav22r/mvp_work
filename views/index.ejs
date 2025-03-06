@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vending Machine Data</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #4caf50;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>📊 Vending Machine Monitoring</h1>
+
+    <h2>🛠 Machine Data</h2>
+    <table>
+      <tr>
+        <th>Timestamp</th>
+        <th>Temperature Level</th>
+        <th>Humidity Level</th>
+      </tr>
+      <% machineData.forEach(data => { %>
+      <tr>
+        <td><%= data.timestamp %></td>
+        <td><%= data.temperature_level %>°C</td>
+        <td><%= data.humidity_level %>%</td>
+      </tr>
+      <% }); %>
+    </table>
+
+    <h2>🍎 Food Data</h2>
+    <table>
+      <tr>
+        <th>Unique ID</th>
+        <th>Food Name</th>
+        <th>Gas Level</th>
+        <th>Temperature Level</th>
+        <th>Humidity Level</th>
+        <th>Status</th>
+      </tr>
+      <% foodData.forEach(food => { %>
+      <tr>
+        <td><%= food.unique_id %></td>
+        <td><%= food.food_name %></td>
+        <td><%= food.gas_level %> ppm</td>
+        <td><%= food.temp_level %>°C</td>
+        <td><%= food.humidity_level %>%</td>
+        <td><%= food.status %></td>
+      </tr>
+      <% }); %>
+    </table>
+  </body>
+</html>
